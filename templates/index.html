@@ -7,6 +7,7 @@
     <title>My Portofolio | Eko Yudo Prayitno</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -35,9 +36,10 @@
     <section class=" text-center" id="home">
         <div class="p-5 mb-4 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
-                <img src="ProfilePicture.png" alt="" class="rounded-circle" style="width: 200px;">
+                <img src="static/ProfilePicture.png" alt="" class="rounded-circle" style="width: 200px;">
                 <h1 class="display-5 fw-bold">Eko Yudo Prayitno</h1>
                 <p class="fs-4">Mahasiswa ITTP</p>
+                <a href="cv" class="btn btn-success">View CV</a>
             </div>
         </div>
     </section>
@@ -84,24 +86,24 @@
 
     <!-- Project Start -->
     <section class="bg-white" id="project" style=" background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,244,245,1) 100%); " >
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,244,245,1) 100%); ">
         <div class="container p-5">
             <h2 class="text-center mb-5">Project</h2>
             <div class="row">
                 <div class="col-md-4 mb-5" style="box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);">
-                    <img class="img-fluid" src="Project1.jpg" alt="">
+                    <img class="img-fluid" src="static/Project1.jpg" alt="">
                     <h3 class="mb-3">Project 1</h3>
                     <p>Contoh deskripsi untuk project 1. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Culpa, molestias!</p>
                 </div>
                 <div class="col-md-4 mb-5" style="box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);">
-                    <img class="img-fluid" src="Project2.png" alt="">
+                    <img class="img-fluid" src="static/Project2.png" alt="">
                     <h3 class="mb-3">Project 2</h3>
                     <p>Contoh deskripsi untuk project 2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Culpa, molestias!</p>
                 </div>
                 <div class="col-md-4 mb-5" style="box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);">
-                    <img class="img-fluid" src="Project3.jpg" alt="">
+                    <img class="img-fluid" src="static/Project3.jpg" alt="">
                     <h3 class="mb-3">Project 3</h3>
                     <p>Contoh deskripsi untuk project 3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Culpa, molestias!</p>
@@ -146,23 +148,23 @@
     <div class="d-flex justify-content-center" style="background-color: #f1f1f1">
         <div class="p-2">
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#facebook" role="button"
-                data-mdb-ripple-color="dark"><img src="Facebook.png" alt="" style="width: 40px;"><i
+                data-mdb-ripple-color="dark"><img src="static/Facebook.png" alt="" style="width: 40px;"><i
                     class="fab fa-facebook-f"></i></a>
 
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#twitter" role="button"
-                data-mdb-ripple-color="dark"><img src="Twitter.png" alt="" style="width: 40px;"><i
+                data-mdb-ripple-color="dark"><img src="static/Twitter.png" alt="" style="width: 40px;"><i
                     class="fab fa-twitter-f"></i></a>
 
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#instagram" role="button"
-                data-mdb-ripple-color="dark"><img src="Instagram.png" alt="" style="width: 40px;"><i
+                data-mdb-ripple-color="dark"><img src="static/Instagram.png" alt="" style="width: 40px;"><i
                     class="fab fa-instagram-f"></i></a>
 
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#linkedin" role="button"
-                data-mdb-ripple-color="dark"><img src="Linkedin.png" alt="" style="width: 40px;"><i
+                data-mdb-ripple-color="dark"><img src="static/Linkedin.png" alt="" style="width: 40px;"><i
                     class="fab fa-linkedin-f"></i></a>
 
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#github" role="button"
-                data-mdb-ripple-color="dark"><img src="Github.png" alt="" style="width: 40px;"><i
+                data-mdb-ripple-color="dark"><img src="static/Github.png" alt="" style="width: 40px;"><i
                     class="fab fa-github-f"></i></a>
         </div>
     </div>
@@ -173,6 +175,28 @@
     </div>
     <!-- Footer End -->
 
+    <script>
+        $.ajax({
+            type: 'GET',
+            url: '/info?grup_give=Grup 1',
+            data: {},
+            success: function (response) {
+                console.log(response)
+            }
+        })
+
+        $.ajax({
+            type: 'POST',
+            url: '/info',
+            data: {
+                nama: 'Eko'
+            },
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    </script>
+    
 </body>
 <footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
